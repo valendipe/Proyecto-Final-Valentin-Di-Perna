@@ -17,4 +17,4 @@ username: VALENTIN contraseña: FDP308
 
 # Usuarios de pruebas
 username: gonzalito1234 contraseña: 1234ABCDE
-username: dipe_72 contraseña: 1234
+username: dipe_72 contraseña: elmejordetodos1
