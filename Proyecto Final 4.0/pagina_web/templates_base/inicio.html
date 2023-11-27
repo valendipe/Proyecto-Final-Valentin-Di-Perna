@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Inicio</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio - InfoNow</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        li {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            list-style: none; /* Quitar las viñetas de la lista */
+        }
+
+        h3 {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h4 {
+            color: #555;
+        }
+
+        p {
+            color: #777;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>InfoNow</h1>
+        <br><br>
+        <h2>Para enterarte mejor sobre lo que pasa en el mundo.</h2>
+    </div>
+
+    <!-- Mostrar artículos destacados fuera del contenedor principal -->
+    <div class="container">
+        <ul>
+            {% for articulo in articulos_destacados %}
+                <li>
+                    <h3>{{ articulo.titulo }}</h3>
+                    <h4>{{ articulo.subtitulo }}</h4>
+                    <p>{{ articulo.cuerpo|truncatewords:10 }}</p>
+                    <a href="{% url 'detalle_articulo' articulo.pk %}" class="btn btn-primary">Leer más</a>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>    
+</body>
+</html>
+{% endblock contenido %}

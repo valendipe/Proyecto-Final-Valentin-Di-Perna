@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Articulos</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<section style="padding: 2rem 3rem;">
+  <div class="container">
+      <div class="row">
+          {% if object_list %}
+              {% for articulo in object_list %}
+                  <div class="col-md-8">
+                      <div class="card mb-4">
+                          <div class="card-body">
+                              <h2 class="card-title">{{ articulo.titulo }}</h2>
+                              <h6 class="card-subtitle mb-2 text-muted">{{ articulo.subtitulo }}</h6>
+                              <p class="card-text">{{ articulo.cuerpo|truncatewords:10 }}</p>
+                              <p class="card-text">
+                                  <small class="text-muted">Publicado el {{ articulo.fecha|date:"F d, Y" }} por {{ articulo.autor }}</small>
+                              </p>
+                              {% if user == articulo.autor %}
+                                  <a href="{% url 'editar_articulo' articulo.id %}" class="btn btn-primary btn-sm">Editar</a>
+                              {% endif %}
+                              <a href="{% url 'detalle_articulo' articulo.pk%}" class="btn btn-secondary btn-sm">Leer más</a>
+                              {% if user == articulo.autor %}
+                                  <a href="{% url 'eliminar_articulo' articulo.id %}" class="btn btn-danger btn-sm">
+                                      <i class="bi bi-trash"></i> Eliminar
+                                  </a>
+                              {% endif %}
+                          </div>
+                      </div>
+                  </div>
+              {% endfor %}
+          {% else %}
+              <div class="col-md-12">
+                  <h2>No hay entradas aún</h2>
+              </div>
+          {% endif %}
+      </div>
+  </div>
+</section>
+{% endblock contenido %}

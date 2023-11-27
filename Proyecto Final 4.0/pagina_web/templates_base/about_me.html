@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>About me</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quién Soy - Mi Blog</title>
+    <link rel="stylesheet" href="tu-archivo-de-estilos.css"> <!-- Agrega aquí el enlace a tu archivo de estilos si tienes uno -->
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ffab10;
+            text-align: center;
+        }
+
+        h2 {
+            color: #343a40;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>¿Quién soy?</h3>
+        <div class="separator"></div> <!-- Línea separadora -->
+        <p>Mi nombre es Valentín Di Perna. Actualmente, tengo 16 años y vivo en Argentina. Aunque aún no he terminado el colegio, decidí explorar el mundo de la programación por dos razones fundamentales:</p>
+
+        <p>En primer lugar, considero que aprender un lenguaje de programación es tan crucial actualmente como aprender nuevos idiomas. Al mismo tiempo, estoy decidido a que, una vez que termine el secundario, me quiero dedicar al mundo de la progrmación y el desarrollo web.</p>
+
+        <p>Gracias Coderhouse, por ayudarme a dar mis primeros pasos.</p>
+    </div>
+</body>
+</html>
+{% endblock contenido %}

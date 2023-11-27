@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<form method="post" class="my-4">
+  {% csrf_token %}
+  <div class="mb-3">
+      <label for="{{ form.username.id_for_label }}" class="form-label">Nombre de Usuario:</label>
+      {{ form.username }}
+  </div>
+  <div class="mb-3">
+      <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña:</label>
+      {{ form.password }}
+  </div>
+  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+</form>
+{% endblock contenido %}
